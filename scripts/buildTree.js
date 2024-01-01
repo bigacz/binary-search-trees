@@ -5,6 +5,11 @@ function buildTree(array) {
   const uniqueArray = [...new Set(array)];
   const sortedArray = mergeSort(uniqueArray);
 
+  if (!Array.isArray(array)) {
+    console.log('works');
+    return null;
+  }
+
   const root = buildTreeRecursion(sortedArray);
 
   return root;

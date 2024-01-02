@@ -13,8 +13,10 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
   }
 };
 
-const testNumbers = [8, 4, 15, 9, 5, 6, 2, 14, 12, 3];
+const testNumbers = [
+  17, 14, 10, 18, 15, 8, 9, 2, 7, 4, 11, 19, 3, 5, 16, 6, 13, 1, 12, 20,
+];
+
 const testTree = new Tree(testNumbers);
-prettyPrint(testTree.root);
-testTree.insert(7);
+
 prettyPrint(testTree.root);

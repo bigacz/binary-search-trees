@@ -6,7 +6,6 @@ function buildTree(array) {
   const sortedArray = mergeSort(uniqueArray);
 
   if (!Array.isArray(array)) {
-    console.log('works');
     return null;
   }
 

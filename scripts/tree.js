@@ -110,6 +110,39 @@ class Tree {
 
     return currentNode;
   }
+
+  levelOrder(callback) {
+    if (this.root === null) {
+      return null;
+    }
+
+    const queue = [this.root];
+    const returnArray = [];
+
+    while (queue.length > 0) {
+      const currentNode = queue.shift();
+      const { left } = currentNode;
+      const { right } = currentNode;
+
+      if (left !== null) {
+        queue.push(left);
+      }
+
+      if (right !== null) {
+        queue.push(right);
+      }
+
+      if (callback) {
+        callback(currentNode);
+      } else {
+        returnArray.push(currentNode.value);
+      }
+    }
+
+    if (returnArray.length > 0) {
+      return returnArray;
+    }
+  }
 }
 
 export default Tree;

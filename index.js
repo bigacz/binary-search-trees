@@ -18,5 +18,4 @@ const testNumbers = [
 ];
 
 const testTree = new Tree(testNumbers);
-
 prettyPrint(testTree.root);

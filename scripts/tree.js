@@ -6,7 +6,6 @@ class Tree {
     this.root = buildTree(array);
   }
 
-  // remove duplicates
   insert(value) {
     const insertionNode = new Node(value);
     let currentNode = this.root;
@@ -23,6 +22,10 @@ class Tree {
     let previousNode;
     while (currentNode !== null) {
       previousNode = currentNode;
+
+      if (currentNode.value === value) {
+        return;
+      }
 
       if (value > currentNode.value) {
         currentNode = currentNode.right;

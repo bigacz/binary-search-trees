@@ -19,3 +19,5 @@ const testNumbers = [
 
 const testTree = new Tree(testNumbers);
 prettyPrint(testTree.root);
+console.log('----------------------------');
+prettyPrint(testTree.root);

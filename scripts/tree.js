@@ -93,6 +93,23 @@ class Tree {
       previousNode[previousSide] = null;
     }
   }
+
+  find(searchValue) {
+    if (this.root === null) {
+      return null;
+    }
+
+    let currentNode = this.root;
+    while (currentNode !== null && currentNode.value !== searchValue) {
+      if (searchValue > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        currentNode = currentNode.left;
+      }
+    }
+
+    return currentNode;
+  }
 }
 
 export default Tree;

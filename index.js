@@ -20,4 +20,5 @@ const testNumbers = [
 const testTree = new Tree(testNumbers);
 prettyPrint(testTree.root);
 console.log('----------------------------');
+console.log(testTree.find('huj'));
 prettyPrint(testTree.root);

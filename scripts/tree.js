@@ -170,6 +170,60 @@ class Tree {
       return returnArray;
     }
   }
+
+  preOrder(callback, node = structuredClone(this.root)) {
+    if (node === null) {
+      if (callback) {
+        return;
+      }
+      return [];
+    }
+
+    const returnArray = [];
+    if (callback) {
+      callback(node);
+      this.preOrder(callback, node.left);
+      this.preOrder(callback, node.right);
+    } else {
+      const firstHalf = this.preOrder(callback, node.left);
+      const secondHalf = this.preOrder(callback, node.right);
+
+      returnArray.push(node.value);
+      returnArray.push(...firstHalf);
+      returnArray.push(...secondHalf);
+    }
+
+    if (!callback) {
+      return returnArray;
+    }
+  }
+
+  postOrder(callback, node = structuredClone(this.root)) {
+    if (node === null) {
+      if (callback) {
+        return;
+      }
+      return [];
+    }
+
+    const returnArray = [];
+    if (callback) {
+      this.postOrder(callback, node.left);
+      this.postOrder(callback, node.right);
+      callback(node);
+    } else {
+      const firstHalf = this.postOrder(callback, node.left);
+      const secondHalf = this.postOrder(callback, node.right);
+
+      returnArray.push(...firstHalf);
+      returnArray.push(...secondHalf);
+      returnArray.push(node.value);
+    }
+
+    if (!callback) {
+      return returnArray;
+    }
+  }
 }
 
 // TODO: Add levelOrder with recursion

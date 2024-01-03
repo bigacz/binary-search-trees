@@ -224,6 +224,24 @@ class Tree {
       return returnArray;
     }
   }
+
+  // Kind of works, figure it out
+  height(node = this.root, level = 1) {
+    if (node === null) {
+      return -1;
+    }
+    let leftHeight = level;
+    let rightHeight = level;
+
+    if (Object.hasOwn(node, 'left')) {
+      leftHeight += this.height(node.left);
+    }
+    if (Object.hasOwn(node, 'right')) {
+      rightHeight += this.height(node.right);
+    }
+
+    return leftHeight > rightHeight ? leftHeight : rightHeight;
+  }
 }
 
 // TODO: Add levelOrder with recursion

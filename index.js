@@ -19,7 +19,7 @@ const testNumbers = [
 
 const testTree = new Tree(testNumbers);
 prettyPrint(testTree.root);
-console.log(testTree.postOrder(logWithWorks));
+console.log(testTree.height());
 
 function logWithWorks(node) {
   console.log(`${node.value} works`);

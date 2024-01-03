@@ -116,7 +116,7 @@ class Tree {
       return null;
     }
 
-    const queue = [this.root];
+    const queue = [structuredClone(this.root)];
     const returnArray = [];
 
     while (queue.length > 0) {
@@ -144,5 +144,7 @@ class Tree {
     }
   }
 }
+
+// TODO: Add levelOrder with recursion
 
 export default Tree;

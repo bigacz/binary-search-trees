@@ -144,7 +144,7 @@ class Tree {
     }
   }
 
-  inOrder(callback, node = this.root) {
+  inOrder(callback, node = structuredClone(this.root)) {
     if (node === null) {
       if (callback) {
         return;

@@ -113,7 +113,7 @@ class Tree {
 
   levelOrder(callback) {
     if (this.root === null) {
-      return null;
+      return [];
     }
 
     const queue = [structuredClone(this.root)];
@@ -140,6 +140,33 @@ class Tree {
     }
 
     if (returnArray.length > 0) {
+      return returnArray;
+    }
+  }
+
+  inOrder(callback, node = this.root) {
+    if (node === null) {
+      if (callback) {
+        return;
+      }
+      return [];
+    }
+
+    const returnArray = [];
+    if (callback) {
+      this.inOrder(callback, node.left);
+      callback(node);
+      this.inOrder(callback, node.right);
+    } else {
+      const firstHalf = this.inOrder(callback, node.left);
+      const secondHalf = this.inOrder(callback, node.right);
+
+      returnArray.push(...firstHalf);
+      returnArray.push(node.value);
+      returnArray.push(...secondHalf);
+    }
+
+    if (!callback) {
       return returnArray;
     }
   }

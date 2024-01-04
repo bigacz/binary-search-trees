@@ -225,13 +225,12 @@ class Tree {
     }
   }
 
-  // Kind of works, figure it out
-  height(node = this.root, level = 1) {
+  height(node = this.root) {
     if (node === null) {
       return -1;
     }
-    let leftHeight = level;
-    let rightHeight = level;
+    let leftHeight = 1;
+    let rightHeight = 1;
 
     if (Object.hasOwn(node, 'left')) {
       leftHeight += this.height(node.left);

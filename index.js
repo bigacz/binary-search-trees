@@ -18,6 +18,13 @@ const testNumbers = [
 ];
 
 const testTree = new Tree(testNumbers);
+testTree.insert(20);
+testTree.insert(23);
+testTree.insert(24);
+testTree.insert(27);
+testTree.insert(25);
+testTree.insert(33);
+testTree.insert(54);
 prettyPrint(testTree.root);
 console.log(testTree.height());
 

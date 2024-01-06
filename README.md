@@ -2,11 +2,11 @@ Provides a class, which constructor accepts an array of integers, removes duplic
 
 - `insert(value)` inserts a node with given value while maintaining property of BST.
 - `delete(value)` deletes node with given value while maintaining property of BST.
-- `find(value)` returns a node with given value, if there is no such node, returns null;
+- `find(value)` returns a node with given value, if there is no such node, returns null.
 - `height(node)` returns height of given node, if no node was given, returns height of the tree.
 - `depth(node)` returns a depth of a given node, if no node was given, returns height of the tree.
 - `isBalanced()` returns true if tree is balanced, false if not.
-- `rebalance()` rebalanes the tree if it isn't balanced.
+- `rebalance()` rebalances the tree if it isn't balanced.
 
 ### Traversal methods
 

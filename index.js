@@ -1,4 +1,5 @@
 import Tree from './scripts/tree.js';
+import Node from './scripts/node.js';
 
 const prettyPrint = (node, prefix = '', isLeft = true) => {
   if (node === null) {
@@ -26,7 +27,7 @@ testTree.insert(25);
 testTree.insert(33);
 testTree.insert(54);
 prettyPrint(testTree.root);
-console.log(testTree.height());
+console.log(testTree.depth());
 
 function logWithWorks(node) {
   console.log(`${node.value} works`);

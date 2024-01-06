@@ -241,6 +241,31 @@ class Tree {
 
     return leftHeight > rightHeight ? leftHeight : rightHeight;
   }
+
+  depth(node = null) {
+    if (node === null) {
+      return this.height();
+    }
+
+    const searchValue = node.value;
+    let currentNode = this.root;
+    let depth = 0;
+    while (currentNode !== null && currentNode.value !== searchValue) {
+      const currentValue = currentNode.value;
+
+      if (searchValue > currentValue) {
+        currentNode = currentNode.right;
+      } else {
+        currentNode = currentNode.left;
+      }
+      depth += 1;
+    }
+
+    if (currentNode !== null) {
+      return depth;
+    }
+    return -1;
+  }
 }
 
 // TODO: Add levelOrder with recursion

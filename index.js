@@ -28,6 +28,9 @@ testTree.insert(33);
 testTree.insert(54);
 prettyPrint(testTree.root);
 console.log(testTree.isBalanced());
+console.log(testTree.rebalance());
+console.log(testTree.isBalanced());
+prettyPrint(testTree.root);
 
 function logWithWorks(node) {
   console.log(`${node.value} works`);

@@ -279,8 +279,14 @@ class Tree {
         balanced = false;
       }
     });
-
     return balanced;
+  }
+
+  rebalance() {
+    if (!this.isBalanced()) {
+      const sortedValues = this.inOrder();
+      this.root = buildTree(sortedValues);
+    }
   }
 }
 

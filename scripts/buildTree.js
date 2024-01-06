@@ -5,7 +5,7 @@ function buildTree(array) {
   const uniqueArray = [...new Set(array)];
   const sortedArray = mergeSort(uniqueArray);
 
-  if (!Array.isArray(array)) {
+  if (!Array.isArray(array) || array.length === 0) {
     return null;
   }
 

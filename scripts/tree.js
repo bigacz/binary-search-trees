@@ -266,6 +266,22 @@ class Tree {
     }
     return -1;
   }
+
+  isBalanced() {
+    let balanced = true;
+    const returnValue = this.inOrder((element) => {
+      const heightLeft = this.height(element.left);
+      const heightRight = this.height(element.right);
+
+      const diff = Math.abs(heightLeft - heightRight);
+
+      if (diff > 1) {
+        balanced = false;
+      }
+    });
+
+    return balanced;
+  }
 }
 
 // TODO: Add levelOrder with recursion

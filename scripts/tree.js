@@ -144,6 +144,38 @@ class Tree {
     }
   }
 
+  levelOrderRecursive(callback, nodes = [this.root]) {
+    if (nodes.length === 0 || this.root === null) {
+      return [];
+    }
+
+    const values = [];
+    const childrenList = [];
+
+    nodes.forEach((element) => {
+      if (callback) {
+        callback(element);
+      } else {
+        values.push(element.value);
+      }
+
+      if (element.left !== null) {
+        childrenList.push(element.left);
+      }
+
+      if (element.right !== null) {
+        childrenList.push(element.right);
+      }
+    });
+
+    const childrenValues = this.levelOrderRecursive(callback, childrenList);
+
+    if (!callback) {
+      const returnArray = values.concat(childrenValues);
+      return returnArray;
+    }
+  }
+
   inOrder(callback, node = structuredClone(this.root)) {
     if (node === null) {
       if (callback) {

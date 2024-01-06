@@ -21,8 +21,4 @@ function getRandomNumbers(amount = 10) {
   return returnArray;
 }
 
-function logWithWorks(node) {
-  console.log(`${node.value} works`);
-}
-
 export { prettyPrint, getRandomNumbers };

@@ -19,7 +19,7 @@ console.log(testTree.isBalanced());
 testTree.rebalance();
 console.log(testTree.isBalanced());
 
-console.log(testTree.levelOrder());
+console.log(testTree.levelOrderRecursive());
 console.log(testTree.preOrder());
 console.log(testTree.postOrder());
 console.log(testTree.inOrder());

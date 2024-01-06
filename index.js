@@ -23,5 +23,6 @@ console.log(testTree.levelOrderRecursive());
 console.log(testTree.preOrder());
 console.log(testTree.postOrder());
 console.log(testTree.inOrder());
+console.log(testTree.find(2000));
 
 prettyPrint(testTree.root);
